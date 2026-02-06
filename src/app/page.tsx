@@ -24,14 +24,11 @@ export default function Home() {
               </span>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="#learn" className="text-gray-700 hover:text-purple-600 transition-colors">
+              <Link href="/learn" className="text-gray-700 hover:text-purple-600 transition-colors">
                 Learn
               </Link>
-              <Link href="#create" className="text-gray-700 hover:text-purple-600 transition-colors">
-                Create
-              </Link>
-              <Link href="#marketplace" className="text-gray-700 hover:text-purple-600 transition-colors">
-                Marketplace
+              <Link href="/pricing" className="text-gray-700 hover:text-purple-600 transition-colors">
+                Pricing
               </Link>
               <Button variant="outline" size="sm">
                 Sign In
@@ -312,7 +309,7 @@ export default function Home() {
         </Tabs>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Preview */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Choose Your Plan</h2>
@@ -365,19 +362,19 @@ export default function Home() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle>Premium Yearly</CardTitle>
-              <CardDescription>Best value for creators</CardDescription>
+              <CardDescription>Best value</CardDescription>
               <div className="text-3xl font-bold">₹4,999<span className="text-lg text-gray-500">/year</span></div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm">
                 <li>• Everything in Premium</li>
                 <li>• 2 months free</li>
-                <li>• Marketplace priority</li>
-                <li>• Creator verification</li>
-                <li>• Custom branding</li>
+                <li>• Ultra HD audio</li>
+                <li>• API access</li>
+                <li>• Dedicated support</li>
               </ul>
               <Button className="w-full mt-4" variant="outline">
-                Save 58% Now
+                Save ₹1,000
               </Button>
             </CardContent>
           </Card>
@@ -385,7 +382,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-20">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -393,43 +390,43 @@ export default function Home() {
                 <Music className="h-6 w-6" />
                 <span className="text-xl font-bold">AI Music Studio</span>
               </div>
-              <p className="text-gray-400 text-sm">
-                Transform your voice into professional music with AI-powered tools.
+              <p className="text-gray-400">
+                Transform your voice into AI-enhanced music and turn your passion into profit.
               </p>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Product</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="#" className="hover:text-white">Learn Singing</Link></li>
-                <li><Link href="#" className="hover:text-white">Create Music</Link></li>
-                <li><Link href="#" className="hover:text-white">Marketplace</Link></li>
-                <li><Link href="#" className="hover:text-white">Pricing</Link></li>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/learn" className="hover:text-white">Learn Singing</Link></li>
+                <li><Link href="/create" className="hover:text-white">Create Music</Link></li>
+                <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
+                <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="#" className="hover:text-white">About</Link></li>
-                <li><Link href="#" className="hover:text-white">Blog</Link></li>
-                <li><Link href="#" className="hover:text-white">Careers</Link></li>
-                <li><Link href="#" className="hover:text-white">Contact</Link></li>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/about" className="hover:text-white">About</Link></li>
+                <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
+                <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
-                <li><Link href="#" className="hover:text-white">Terms of Service</Link></li>
-                <li><Link href="#" className="hover:text-white">License Agreement</Link></li>
-                <li><Link href="#" className="hover:text-white">Cookie Policy</Link></li>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-white">Terms of Service</Link></li>
+                <li><Link href="/licensing" className="hover:text-white">Licensing</Link></li>
+                <li><Link href="/cookies" className="hover:text-white">Cookie Policy</Link></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 AI Music Studio. All rights reserved.</p>
           </div>
         </div>

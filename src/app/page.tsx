@@ -346,7 +346,7 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Premium</CardTitle>
               <CardDescription>For serious creators</CardDescription>
-              <div className="text-3xl font-bold">₹99<span className="text-lg text-gray-500">/month</span></div>
+              <div className="text-3xl font-bold">₹499<span className="text-lg text-gray-500">/month</span></div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm">
@@ -364,9 +364,9 @@ export default function Home() {
 
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <CardTitle>Annual</CardTitle>
-              <CardDescription>Best value for committed artists</CardDescription>
-              <div className="text-3xl font-bold">₹499<span className="text-lg text-gray-500">/year</span></div>
+              <CardTitle>Premium Yearly</CardTitle>
+              <CardDescription>Best value for creators</CardDescription>
+              <div className="text-3xl font-bold">₹4,999<span className="text-lg text-gray-500">/year</span></div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm">

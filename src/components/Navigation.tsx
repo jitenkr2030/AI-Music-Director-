@@ -13,7 +13,10 @@ import {
   X,
   LogIn,
   Crown,
-  Sparkles
+  Sparkles,
+  PlayCircle,
+  CreditCard,
+  TrendingUp
 } from 'lucide-react'
 
 interface NavigationProps {
@@ -63,6 +66,18 @@ export default function Navigation({ currentPage = 'home', user }: NavigationPro
       label: 'Create Videos', 
       href: '/videos',
       icon: PlayCircle 
+    },
+    { 
+      id: 'pricing', 
+      label: 'Pricing', 
+      href: '/pricing',
+      icon: CreditCard 
+    },
+    { 
+      id: 'subscription', 
+      label: 'My Subscription', 
+      href: '/subscription',
+      icon: TrendingUp 
     },
     { 
       id: 'marketplace', 

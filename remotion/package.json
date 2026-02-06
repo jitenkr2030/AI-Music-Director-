@@ -1,0 +1,17 @@
+{
+  "name": "ai-music-studio-videos",
+  "version": "1.0.0",
+  "description": "Remotion videos for AI Music Studio",
+  "scripts": {
+    "start": "remotion preview src/index.ts",
+    "build": "remotion render src/index.ts out/video.mp4",
+    "upgrade": "remotion upgrade",
+    "dev": "remotion preview"
+  },
+  "repository": {},
+  "license": "MIT",
+  "dependencies": {
+    "@remotion/cli": "^4.0.419",
+    "remotion": "^4.0.419"
+  }
+}

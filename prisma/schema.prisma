@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String?
+  avatar        String?
+  isPremium     Boolean  @default(false)
+  subscription  String?  // "free", "monthly", "yearly"
+  bio           String?
+  socialLinks   Json?    // Store social media links
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  songs         Song[]
+  purchases     Purchase[]
+  reviews       Review[]
+  practiceSessions PracticeSession[]
+}
+
+model Song {
+  id            String   @id @default(cuid())
+  title         String
+  description   String?
+  audioUrl      String   // Generated audio file
+  coverImage    String?
+  duration      Int      // Duration in seconds
+  genre         String?
+  mood          String?
+  language      String?
+  tempo         Int?
+  key           String?
+  isPublic      Boolean  @default(false)
+  price         Float?   // Price for licensing
+  licenseType   String?  // "personal", "commercial", "exclusive"
+  tags          String?  // Comma-separated tags
+  playCount     Int      @default(0)
+  downloadCount Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  authorId      String
+  author        User     @relation(fields: [authorId], references: [id])
+  purchases     Purchase[]
+  reviews       Review[]
+}
+
+model Purchase {
+  id            String   @id @default(cuid())
+  amount        Float
+  currency      String   @default("USD")
+  licenseType   String   // "personal", "commercial", "exclusive"
+  transactionId String?  // Payment processor transaction ID
+  createdAt     DateTime @default(now())
+  
+  buyerId       String
+  buyer         User     @relation(fields: [buyerId], references: [id])
+  songId        String
+  song          Song     @relation(fields: [songId], references: [id])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int      // 1-5 stars
+  comment   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  reviewerId String
+  reviewer   User     @relation(fields: [reviewerId], references: [id])
+  songId     String
+  song       Song     @relation(fields: [songId], references: [id])
+}
+
+model PracticeSession {
+  id            String   @id @default(cuid())
+  sessionType   String   // "pitch", "rhythm", "stability", "full-song"
+  duration      Int      // Session duration in seconds
+  pitchScore    Float?
+  rhythmScore   Float?
+  stabilityScore Float?
+  overallScore  Float?
+  notes         String?  // AI feedback notes
+  audioUrl      String?  // Recorded practice audio
+  createdAt     DateTime @default(now())
+  
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+}
